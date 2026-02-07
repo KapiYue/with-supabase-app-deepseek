@@ -76,8 +76,8 @@ export async function POST(request: Request) {
       
       // Call the qwen2.5-vl-32b-instruct model for image understanding
       const completion = await openai.chat.completions.create({
-        // model: 'qwen2.5-vl-32b-instruct',
-        model: 'deepseek-chat',
+        model: 'qwen2.5-vl-32b-instruct',
+        // model: 'deepseek-chat',
         messages: [systemMessage, userMessage],
         response_format: { type: 'json_object' },
       });
@@ -106,8 +106,8 @@ export async function POST(request: Request) {
     // If there's only text but no image, use text-only processing
     else if (text) {
       const completion = await openai.chat.completions.create({
-        // model: 'qwen2.5-vl-32b-instruct',
-        model: 'deepseek-chat',
+        model: 'qwen2.5-vl-32b-instruct',
+        // model: 'deepseek-chat',
         messages: [
           {
             role: 'system' as const,
